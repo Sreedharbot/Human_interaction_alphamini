@@ -71,8 +71,8 @@ async def T_ObserveInfraredDistance():
         time.sleep(2)
         if msg.distance < 500:
             observer.stop()
-            asyncio.subprocess(move_forward)
-        #     asyncio.create_task(turn())
+            await asyncio.run(forward_move_robot)
+        #   asyncio.create _task(turn())
 
     observer.set_handler(handler)
     observer.start()
